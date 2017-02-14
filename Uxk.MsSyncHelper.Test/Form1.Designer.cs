@@ -54,7 +54,8 @@
             this.txtServerConnectionString.Name = "txtServerConnectionString";
             this.txtServerConnectionString.Size = new System.Drawing.Size(515, 20);
             this.txtServerConnectionString.TabIndex = 1;
-            this.txtServerConnectionString.Text = "Data Source=.; Initial Catalog=SyncDBServer; Integrated Security=True";
+            this.txtServerConnectionString.Text = "Data Source=LAP0000082\\SQLEXPRESS; Initial Catalog=DbScottServer; Integrated Secu" +
+    "rity=True";
             // 
             // txtClientConnectionString
             // 
@@ -62,7 +63,8 @@
             this.txtClientConnectionString.Name = "txtClientConnectionString";
             this.txtClientConnectionString.Size = new System.Drawing.Size(515, 20);
             this.txtClientConnectionString.TabIndex = 3;
-            this.txtClientConnectionString.Text = "Data Source=.; Initial Catalog=SyncDBClient; Integrated Security=True";
+            this.txtClientConnectionString.Text = "Data Source=LAP0000082\\SQLEXPRESS; Initial Catalog=DbScottClient1; Integrated Sec" +
+    "urity=True";
             // 
             // label2
             // 
@@ -136,6 +138,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
