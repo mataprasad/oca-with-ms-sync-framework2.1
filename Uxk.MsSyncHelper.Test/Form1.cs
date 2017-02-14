@@ -1,9 +1,12 @@
-﻿using System;
+﻿using IniParser;
+using IniParser.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
@@ -52,6 +55,14 @@ namespace Uxk.MsSyncHelper.Test
             foreach (var item in Enum.GetNames(typeof(Environment.SpecialFolder)))
             {
                 Console.WriteLine("{1} : {0}", Environment.GetFolderPath((Environment.SpecialFolder)Enum.Parse(typeof(Environment.SpecialFolder), item)),item);
+            }
+            
+            if (File.Exists("impersonation-win-45.ini"))
+            {                
+                var parser = new FileIniDataParser();
+                IniData data = parser.ReadFile("impersonation-win-45.ini");
+                string id = data["ADMIN"]["ID"];
+                string pwd = data["ADMIN"]["PWD"];              
             }
         }
     }
